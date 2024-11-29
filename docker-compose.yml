@@ -9,6 +9,7 @@ services:
       - "9090:9090"
 #    volumes:
 #      - ./prometheus-data:/etc/prometheus     
+    restart: always
     networks:
       - atul-net
 
@@ -22,6 +23,23 @@ services:
       - lprometheus
     # volumes:
     #   - ./grafana-data:/var/lib/grafana   
+    restart: always
+    networks:
+      - atul-net
+
+  luptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: local_uptime_kuma
+    volumes:
+      - ./data:/app/data
+    ports:
+      - 3001:3001
+
+    depends_on:
+      - lprometheus
+      - lgrafana
+    restart: unless-stopped
+
     networks:
       - atul-net
       
