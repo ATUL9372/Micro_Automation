@@ -7,12 +7,12 @@ services:
     container_name: local_prometheus
     ports:
       - "9090:9090"
-#    volumes:
-#      - ./prometheus-data:/etc/prometheus     
+    volumes:
+      - ./prometheus-data/prometheus.yml:/etc/prometheus/prometheus.yml
     restart: always
     networks:
       - atul-net
-
+#------------------------------------------------------------------------------------
 
   lgrafana:
     image: grafana/grafana
@@ -21,11 +21,11 @@ services:
       - "3000:3000"  
     depends_on:
       - lprometheus
-    # volumes:
-    #   - ./grafana-data:/var/lib/grafana   
+
     restart: always
     networks:
       - atul-net
+#------------------------------------------------------------------------------------
 
   luptime-kuma:
     image: louislam/uptime-kuma:latest
@@ -34,15 +34,14 @@ services:
       - ./data:/app/data
     ports:
       - 3001:3001
-
     depends_on:
       - lprometheus
       - lgrafana
     restart: unless-stopped
-
     networks:
       - atul-net
-      
+#------------------------------------------------------------------------------------   
+
 networks:
   atul-net:
     driver: bridge
