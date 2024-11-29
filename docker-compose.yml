@@ -14,6 +14,18 @@ services:
       - atul-net
 #------------------------------------------------------------------------------------
 
+  lnode_exporter:
+    image: prom/node-exporter:latest
+    container_name: local_node_exporter
+    ports:
+      - "9100:9100"
+
+    depends_on:
+      - lprometheus
+    networks:
+      - atul-net
+#------------------------------------------------------------------------------------
+
   lgrafana:
     image: grafana/grafana
     container_name: local_grafana   
