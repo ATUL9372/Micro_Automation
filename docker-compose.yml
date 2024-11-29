@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+
+  lprometheus:
+    image: prom/prometheus
+    container_name: local_prometheus
+    ports:
+      - "9090:9090"
+#    volumes:
+#      - ./prometheus-data:/etc/prometheus     
+    networks:
+      - atul-net
+
+
+  lgrafana:
+    image: grafana/grafana
+    container_name: local_grafana   
+    ports:
+      - "3000:3000"  
+    depends_on:
+      - lprometheus
+    # volumes:
+    #   - ./grafana-data:/var/lib/grafana   
+    networks:
+      - atul-net
+      
+networks:
+  atul-net:
+    driver: bridge
+
+volumes:
+  prometheus-data:
+  grafana-data:
+
+
+
+
