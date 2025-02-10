@@ -10,4 +10,4 @@ services:
 
     network_mode: host
     command: /bin/bash -c "ansible-playbook -i /atul/lynis_ansible/hosts /atul/lynis_ansible/lynis_automation.yml"
-    restart: always
+
