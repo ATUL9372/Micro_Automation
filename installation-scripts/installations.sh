@@ -26,14 +26,4 @@ echo -e "${BLUE}________________________________________________________________
 
 echo -e "${GREEN}------------------------------ Buildpacks Installation Completed ------------------------------${NC}"
 
-
-
-# buildpack steup for source code
-
-
-pack builder suggest # optional
-
-# run
-
-
-pack build atul-web-test --builder=gcr.io/buildpacks/builder:google-22 
+docker network create atul-net
