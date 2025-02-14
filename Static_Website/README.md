@@ -32,7 +32,7 @@ docker run -d -p <Enter-Same-Port-Or-Different-Port>:<Enter-Your-Project-Require
 
 Example:
 ```sh
-docker run -d -p 3000:8080 --name atul-static-web-con --network atul-net 2-atul-static-web
+docker run -d -p 3000:8080 --name atul-static-web-con --network atul-net atul-static-web
 ```
 
 ### Step 4: Stop the Docker Container
