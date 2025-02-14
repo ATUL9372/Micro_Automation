@@ -1,4 +1,4 @@
-# Static Website Build and Deployment Using Buildpacks
+# Static Website Build and Deployments
 
 ## Prerequisites
 
