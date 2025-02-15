@@ -10,7 +10,11 @@ echo -e "${YELLOW}------------------------------ Installing Docker -------------
 
 sudo apt update -y
 echo -e "${BLUE}___________________________________________________________________${NC}"
-sudo apt install docker.io docker-compose docker-compose-v2 -y
+sudo apt install docker.io -y
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.33.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
 echo -e "${BLUE}___________________________________________________________________${NC}"
 sudo usermod -aG docker $USER
 echo -e "${BLUE}___________________________________________________________________${NC}"
@@ -27,3 +31,4 @@ echo -e "${BLUE}________________________________________________________________
 echo -e "${GREEN}------------------------------ Buildpacks Installation Completed ------------------------------${NC}"
 
 docker network create atul-net
+
