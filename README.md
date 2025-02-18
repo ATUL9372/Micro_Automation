@@ -1,7 +1,3 @@
-# Micro_Automation
-microservices automation
-
-
 # Micro_Automation - Docker-Based Microservice Automation
 
 ## **Overview**
