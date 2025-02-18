@@ -1,4 +1,4 @@
-# Micro_Automation - Docker-Based Microservice Automation
+# Micro_Automation - Docker-Based Microservice Automation 
 
 ## **Overview**
 Micro_Automation is a **Docker & Docker Compose-based** automation solution for **server monitoring, security auditing, hardening, cloud automation, security analysis, and website deployment**. This project is designed to simplify infrastructure management with a fully containerized approach.
@@ -47,8 +47,12 @@ Micro_Automation is a **Docker & Docker Compose-based** automation solution for 
 
 ## **Why Use Micro_Automation?**
 ✅ **Fully containerized & automated** – Easy install/uninstall.
+
 ✅ **Security-first approach** – Covers monitoring, auditing & compliance.
+
 ✅ **Cloud-ready** – AWS Terraform automation included.
+
 ✅ **DevOps & SOC integration** – Security + Monitoring in one project.
+
 ✅ **Website deployment automation** – Supports static & dynamic sites.
 
