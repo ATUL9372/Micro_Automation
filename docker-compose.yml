@@ -37,7 +37,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
       - ./grafana_config/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - ./grafana_config/provisioning/dashboards:/var/lib/grafana/dashboards
+      # - ./grafana_config/provisioning/dashboards:/var/lib/grafana/dashboards
       - ./grafana_config/provisioning/datasources:/etc/grafana/provisioning/datasources
     networks:
       - atul-net
