@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    # restart: always
+    environment:
+      POSTGRES_DB: artiv
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres@123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  django:
+    image: my_python_image
+    container_name: django_container
+    depends_on:
+      - db
+    # restart: always
+    command: >
+      sh -c "python /app/art_auction/manage.py migrate &&
+             python /app/art_auction/manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_NAME=artiv
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres@123
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+    volumes:
+      - .:/app
+
+volumes:
+  pg_data:
