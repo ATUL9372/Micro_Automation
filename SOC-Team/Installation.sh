@@ -9,4 +9,6 @@ sudo docker-compose -f generate-indexer-certs.yml run --rm generator
 
 # Username : admin 
 # Password : SecretPassword
+# create new user : https://<your-server-ip>/app/security
+# 
 sudo docker-compose up -d
